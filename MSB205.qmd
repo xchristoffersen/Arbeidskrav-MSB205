@@ -1,7 +1,68 @@
 ---
 title: "Arbeidskrav MSB205"
+author: 
+- Jonathan Christoffersen
+- Daniel Karstad
 format: html
 editor: visual
+lang: no-NB
 ---
 
-## Test
+# Del 1: Sammendrag
+
+# Del 2:
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(sf)
+library(here)
+library(tmap)
+library(sp)
+library(spdep)
+library(spatialreg)
+library(lmtest)
+library(sandwich)
+library(units)
+library(car)
+library(foreign)
+```
+
+### Lese inn *House Sales King County* fil
+
+```{r}
+kc_house_data <- read.csv("data/kc_house_data.csv")
+```
+
+### Lese inn shape-fil
+
+```{r}
+kc_wadoh_map = read_sf("data/WADOH_Environmental_Health_Disparities_Index_Calculated_for_King_County___wadohehdindex_area.shp")
+```
+
+```{r}
+kc_wadoh_map <- kc_wadoh_map %>% 
+  select(
+  GEO_ID_TRT,
+  EHD_percen,#Environmental Health Index, weighted score many vars
+  linguist_2,#Pop. age 5+ speaking English less than "very well"
+  poverty_pe,#Percentage people living in poverty
+  POC_percen,#People of Color in percentage of pop. in tract
+  transporta,#% of income spent on transportation median family in tract
+  unemploy_2,#percentage unemployed
+  housing_pe,#% of households in group "Unaffordable Housing" (>30% inc.)
+  traffic_pe,#% of pop. near heavy traffic roadways
+  diesel,# nox consentration
+  ozone,# ozone consentration
+  PM25, # consentration of Particulate Matter in air
+  toxic_rele, # Toxic release from factories
+  hazardous_, # Hazardous Waste Treatment Storage and disposal Facilities
+  lead_perce, # measure of Lead paint in houses
+  superfund, # Proximity to contaminated sites on national list
+  facilities, # Proximity to Risk Management Plan Facilities
+  wastewater, # Proximity to wastewater facilities
+  sen_pop_pe, # % pop. over 65
+  socio_perc # score social economic determants, low best
+  )
+```
+
