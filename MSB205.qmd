@@ -8,9 +8,11 @@ editor: visual
 lang: no-NB
 ---
 
-# Del 1: Sammendrag
+# 1. Artikkelgjennomgang av Bishop et al. (2020)
 
-# Del 2:
+
+
+# 2.
 
 ```{r}
 library(tidyverse)
@@ -65,4 +67,3 @@ kc_wadoh_map <- kc_wadoh_map %>%
   socio_perc # score social economic determants, low best
   )
 ```
-
