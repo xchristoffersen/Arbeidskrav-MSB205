@@ -7,11 +7,6 @@ format: html
 editor: visual
 lang: no-NB
 ---
-
-# Del 1: Sammendrag
-
-# Del 2:
-
 ```{r}
 library(tidyverse)
 library(lubridate)
@@ -28,17 +23,52 @@ library(car)
 library(foreign)
 ```
 
+# Oppgave 1: 
+
+## a.
+
+
+## b.
+
+
+## c.
+### i.
+
+### ii.
+
+# Oppgave 2: 
+
 ### Lese inn *House Sales King County* fil
+
+## i.
+
+## ii.
 
 ```{r}
 kc_house_data <- read.csv("data/kc_house_data.csv")
 ```
 
-### Lese inn shape-fil
+## iii.
+
+## iv.
+
+## v.
+
+## vi.
+
+## vii.
+
+## viii.
+
+# Oppgave 3: 
+
+## i.
 
 ```{r}
 kc_wadoh_map = read_sf("data/WADOH_Environmental_Health_Disparities_Index_Calculated_for_King_County___wadohehdindex_area.shp")
 ```
+
+## ii.
 
 ```{r}
 kc_wadoh_map <- kc_wadoh_map %>% 
@@ -65,4 +95,96 @@ kc_wadoh_map <- kc_wadoh_map %>%
   socio_perc # score social economic determants, low best
   )
 ```
+
+## iii.
+
+## iv.
+
+## v.
+
+## vi.
+
+## vii.
+
+## viii.
+
+
+# Oppgave 4:
+
+## i.
+
+## ii.
+
+## iii.
+
+## iv.
+
+## v.
+
+
+# Oppgave 5:
+
+## i.
+
+## ii.
+
+## iii.
+
+## iv.
+
+## v.
+
+
+# Oppgave 6:
+
+## i.
+
+## ii.
+
+### 1.
+
+### 2.
+
+### 3.
+
+## iii.
+
+## iv.
+
+
+
+# Oppgave 7:
+
+
+
+
+# Oppgave 8:
+
+## i.
+
+## ii.
+
+## iii.
+
+## iv.
+
+## v.
+
+## vi.
+
+
+# Oppgave 9:
+
+## i.
+
+## ii.
+
+## iii.
+
+## iv.
+
+
+# Oppgave 10:
+
+## Oppsummering / Konklusjon
 
