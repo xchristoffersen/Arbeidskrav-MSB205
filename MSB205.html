@@ -128,7 +128,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="artikkelgjennomgang-av-bishop-et-al.-2020" class="level1">
 <h1>1. Artikkelgjennomgang av Bishop et al.&nbsp;(2020)</h1>
-<p>Rosens først steg tar for seg logikken av den hedoniske modellformuleringen om at markedet skal være definert etter loven om en prisfunksjon (law of one price function). Dette vil si at salg av identiske hus vil ta for seg samme pris gjennom det bestemte markedet. Når markedet er definert vil man gå over til Rosens andre steg, som er å samle inn data. Gullstandarden innenfor datainnsamling innen hedoniske eiendomsverdistudier er å anskaffe et tilfeldig utvalg av prisene på hus transaksjonene, i tillegg til karakteristika av det relevante studieområdet.</p>
 </section>
 <section id="section" class="level1">
 <h1>2.</h1>
@@ -221,17 +220,68 @@ The following object is masked from 'package:purrr':
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="oppgave-1" class="level1">
+<h1>Oppgave 1:</h1>
+<section id="a." class="level2">
+<h2 class="anchored" data-anchor-id="a.">a.</h2>
+</section>
+<section id="b." class="level2">
+<h2 class="anchored" data-anchor-id="b.">b.</h2>
+</section>
+<section id="c." class="level2">
+<h2 class="anchored" data-anchor-id="c.">c.</h2>
+<section id="i." class="level3">
+<h3 class="anchored" data-anchor-id="i.">i.</h3>
+</section>
+<section id="ii." class="level3">
+<h3 class="anchored" data-anchor-id="ii.">ii.</h3>
+</section>
+</section>
+</section>
+<section id="oppgave-2" class="level1">
+<h1>Oppgave 2:</h1>
 <section id="lese-inn-house-sales-king-county-fil" class="level3">
 <h3 class="anchored" data-anchor-id="lese-inn-house-sales-king-county-fil">Lese inn <em>House Sales King County</em> fil</h3>
+</section>
+<section id="i.-1" class="level2">
+<h2 class="anchored" data-anchor-id="i.-1">i.</h2>
+</section>
+<section id="ii.-1" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-1">ii.</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>kc_house_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/kc_house_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="lese-inn-shape-fil" class="level3">
-<h3 class="anchored" data-anchor-id="lese-inn-shape-fil">Lese inn shape-fil</h3>
+<section id="iii." class="level2">
+<h2 class="anchored" data-anchor-id="iii.">iii.</h2>
+</section>
+<section id="iv." class="level2">
+<h2 class="anchored" data-anchor-id="iv.">iv.</h2>
+</section>
+<section id="v." class="level2">
+<h2 class="anchored" data-anchor-id="v.">v.</h2>
+</section>
+<section id="vi." class="level2">
+<h2 class="anchored" data-anchor-id="vi.">vi.</h2>
+</section>
+<section id="vii." class="level2">
+<h2 class="anchored" data-anchor-id="vii.">vii.</h2>
+</section>
+<section id="viii." class="level2">
+<h2 class="anchored" data-anchor-id="viii.">viii.</h2>
+</section>
+</section>
+<section id="oppgave-3" class="level1">
+<h1>Oppgave 3:</h1>
+<section id="i.-2" class="level2">
+<h2 class="anchored" data-anchor-id="i.-2">i.</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>kc_wadoh_map <span class="ot">=</span> <span class="fu">read_sf</span>(<span class="st">"data/WADOH_Environmental_Health_Disparities_Index_Calculated_for_King_County___wadohehdindex_area.shp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="ii.-2" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-2">ii.</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>kc_wadoh_map <span class="ot">&lt;-</span> kc_wadoh_map <span class="sc">%&gt;%</span> </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
@@ -257,6 +307,129 @@ The following object is masked from 'package:purrr':
 <span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  socio_perc <span class="co"># score social economic determants, low best</span></span>
 <span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="iii.-1" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-1">iii.</h2>
+</section>
+<section id="iv.-1" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-1">iv.</h2>
+</section>
+<section id="v.-1" class="level2">
+<h2 class="anchored" data-anchor-id="v.-1">v.</h2>
+</section>
+<section id="vi.-1" class="level2">
+<h2 class="anchored" data-anchor-id="vi.-1">vi.</h2>
+</section>
+<section id="vii.-1" class="level2">
+<h2 class="anchored" data-anchor-id="vii.-1">vii.</h2>
+</section>
+<section id="viii.-1" class="level2">
+<h2 class="anchored" data-anchor-id="viii.-1">viii.</h2>
+</section>
+</section>
+<section id="oppgave-4" class="level1">
+<h1>Oppgave 4:</h1>
+<section id="i.-3" class="level2">
+<h2 class="anchored" data-anchor-id="i.-3">i.</h2>
+</section>
+<section id="ii.-3" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-3">ii.</h2>
+</section>
+<section id="iii.-2" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-2">iii.</h2>
+</section>
+<section id="iv.-2" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-2">iv.</h2>
+</section>
+<section id="v.-2" class="level2">
+<h2 class="anchored" data-anchor-id="v.-2">v.</h2>
+</section>
+</section>
+<section id="oppgave-5" class="level1">
+<h1>Oppgave 5:</h1>
+<section id="i.-4" class="level2">
+<h2 class="anchored" data-anchor-id="i.-4">i.</h2>
+</section>
+<section id="ii.-4" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-4">ii.</h2>
+</section>
+<section id="iii.-3" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-3">iii.</h2>
+</section>
+<section id="iv.-3" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-3">iv.</h2>
+</section>
+<section id="v.-3" class="level2">
+<h2 class="anchored" data-anchor-id="v.-3">v.</h2>
+</section>
+</section>
+<section id="oppgave-6" class="level1">
+<h1>Oppgave 6:</h1>
+<section id="i.-5" class="level2">
+<h2 class="anchored" data-anchor-id="i.-5">i.</h2>
+</section>
+<section id="ii.-5" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-5">ii.</h2>
+<section id="section-1" class="level3">
+<h3 class="anchored" data-anchor-id="section-1">1.</h3>
+</section>
+<section id="section-2" class="level3">
+<h3 class="anchored" data-anchor-id="section-2">2.</h3>
+</section>
+<section id="section-3" class="level3">
+<h3 class="anchored" data-anchor-id="section-3">3.</h3>
+</section>
+</section>
+<section id="iii.-4" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-4">iii.</h2>
+</section>
+<section id="iv.-4" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-4">iv.</h2>
+</section>
+</section>
+<section id="oppgave-7" class="level1">
+<h1>Oppgave 7:</h1>
+</section>
+<section id="oppgave-8" class="level1">
+<h1>Oppgave 8:</h1>
+<section id="i.-6" class="level2">
+<h2 class="anchored" data-anchor-id="i.-6">i.</h2>
+</section>
+<section id="ii.-6" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-6">ii.</h2>
+</section>
+<section id="iii.-5" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-5">iii.</h2>
+</section>
+<section id="iv.-5" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-5">iv.</h2>
+</section>
+<section id="v.-4" class="level2">
+<h2 class="anchored" data-anchor-id="v.-4">v.</h2>
+</section>
+<section id="vi.-2" class="level2">
+<h2 class="anchored" data-anchor-id="vi.-2">vi.</h2>
+</section>
+</section>
+<section id="oppgave-9" class="level1">
+<h1>Oppgave 9:</h1>
+<section id="i.-7" class="level2">
+<h2 class="anchored" data-anchor-id="i.-7">i.</h2>
+</section>
+<section id="ii.-7" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-7">ii.</h2>
+</section>
+<section id="iii.-6" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-6">iii.</h2>
+</section>
+<section id="iv.-6" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-6">iv.</h2>
+</section>
+</section>
+<section id="oppgave-10" class="level1">
+<h1>Oppgave 10:</h1>
+<section id="oppsummering-konklusjon" class="level2">
+<h2 class="anchored" data-anchor-id="oppsummering-konklusjon">Oppsummering / Konklusjon</h2>
 </section>
 </section>
 
