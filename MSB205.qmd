@@ -22,6 +22,8 @@ library(sandwich)
 library(units)
 library(car)
 library(foreign)
+library(dplyr)
+library(rgeoda)
 ```
 
 # Oppgave 1:
@@ -102,6 +104,10 @@ i modellen.
 
 ## i.
 
+Definisjonene ser bra ut i selve CSV-filen. 
+Slik som under:
+id,date,price,bedrooms,bathrooms,sqft_living,sqft_lot,floors,waterfront,view,condition,grade,sqft_above,sqft_basement,yr_built,yr_renovated,zipcode,lat,long,sqft_living15,sqft_lot15
+
 ## ii.
 
 ```{r}
@@ -110,15 +116,48 @@ kc_house_data <- read.csv("data/kc_house_data.csv")
 
 ## iii.
 
+```{r}
+kc_house_data %>% arrange(desc(mdy(kc_house_data$date)))
+```
+
 ## iv.
+
+dplyr::distinct()
+```{r}
+kc_house_data %>% distinct(sqft_living, .keep_all = TRUE)
+
+```
 
 ## v.
 
+```{r}
+kc_house_data_sf <- st_as_sf(kc_house_data, coords = c(x = "long", y = "lat"), crs = 4326)
+
+```
+
 ## vi.
+
+```{r}
+kc_house_data_sf %>% st_transform(2926)
+```
 
 ## vii.
 
+Koordinater Seattle: 47.609722, -122.333056
+
+```{r}
+cbd <- st_sfc(st_point(c(-122.333056, 47.609722)), crs = 4326) %>% st_transform(2926)
+```
+
 ## viii.
+
+```{r}
+kc_house_data_sf <- kc_house_data_sf %>% mutate(
+ dist_cbd = st_distance(cbd, ., by_element = TRUE),
+ dist_cbd_km = set_units(dist_cbd, km)
+ )
+```
+
 
 # Oppgave 3:
 
@@ -158,35 +197,120 @@ kc_wadoh_map <- kc_wadoh_map %>%
 
 ## iii.
 
+```{r}
+kc_wadoh_map <- kc_wadoh_map %>% st_transform(2926)
+
+
+```
+
 ## iv.
 
+```{r}
+acs_b19101_familyincome <- read.dbf("data/acs_b19101_familyincome.dbf")
+attach(acs_b19101_familyincome)
+```
+
 ## v.
+
+Gjort i forrige punkt
 
 ## vi.
 
+```{r}
+kc_tracts10 <- here("census_SHP/censusSHP/tracts10.shp") %>% 
+  st_read() %>% 
+  st_transform(2926)
+
+kc_tracts10_shore <- here("census_SHP/censusSHP/tracts10_shore.shp") %>% 
+  st_read() %>% 
+  st_transform(2926)
+```
+
 ## vii.
+
+```{r}
+kc_tracts10_env_data <- st_join(
+  kc_tracts10, kc_wadoh_map,
+   by = "GEO_ID_TRT"
+  )
+kc_tracts10_shore_env_data <- st_join(
+  kc_tracts10_shore, kc_wadoh_map,
+  by = "GEO_ID_TRT"
+  )
+```
 
 ## viii.
 
+```{r}
+class(kc_tracts10_env_data)
+class(kc_tracts10_shore_env_data)
+```
+
+```{r}
+
+kc_houses_env_var <- st_join(kc_house_data_sf, kc_tracts10_env_data)
+kc_tracts10_shore_env_var <- st_join(kc_house_data_sf, kc_tracts10_shore_env_data)
+```
+
+
 # Oppgave 4:
+
 
 ## i.
 
+```{r}
+summary(kc_tracts10_env_data)
+```
+
+
+```{r}
+summary(kc_tracts10_shore_env_data)
+```
+
+
 ## ii.
 
-## iii.
+```{r}
+st_write(kc_house_data, "Data/kc_house_data.gpkg", append = FALSE)
+st_write(kc_tracts10, "Data/kc_tracts10.gpkg", append = FALSE)
+st_write(kc_tracts10_shore, "Data/kc_tracts10_shore.gpkg", append = FALSE)
+```
 
+## iii.
+```{r}
+kc_houses_env_var <- arrange(kc_house_data, desc(id))
+kc_houses_env_var_omit <- kc_houses_env_var[-c(3518000180 ),]
+```
 ## iv.
 
+```{r}
+st_write(kc_houses_env_var_omit, "Data/kc_houses_env_var_omit.gpkg", append = FALSE)
+kc_houses_env_var_omit <- kc_houses_env_var_omit %>% mutate(year_month = substr(date, start = 1, stop = 12))
+```
+
 ## v.
+Dette er gjort, og blitt lastet inn på nytt i "Data" mappen
 
 # Oppgave 5:
 
 ## i.
 
+todo
+
 ## ii.
 
+```{r}
+husdata <- st_read("Data/kc_houses_env_var_omit.gpkg")
+
+
+```
+
+```{r, fig.width=3, fig.height=3}
+husdata %>% plot()
+```
 ## iii.
+
+
 
 ## iv.
 
