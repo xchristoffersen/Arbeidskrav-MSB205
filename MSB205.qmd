@@ -26,7 +26,7 @@ library(dplyr)
 library(rgeoda)
 ```
 
-# Oppgave 1:
+# Oppgave 1 - Artikkelsammendrag:
 
 Dette sammendraget fokuserer på Bishop et al. (2020) sin artikkel som
 tar for seg hedoniske eiendomsverdimodeller som den beste praksisen når
@@ -52,10 +52,27 @@ gullstandarden for datasamlingen innen hedoniske eiendomsverdistudier er
 å anskaffe et tilfeldig utvalg av prisene til boligtransaksjonene, i
 tillegg til karakteristika av det relevante studieområdet.
 
-## b.
+Rosen´s presenterte i 1974 det hedoniske rammeverket som en likevekts
+modell. Den hedoniske modellen i en slik forstand tar for seg
+informasjonen om tilbudet av boliger (dette inkluderer også
+eiendomsutviklere sine planer om fremtidige boligprosjekter) og faktorer
+som påvirker videresalg av allerede eksisterende boliger. Når
+transaksjonskostnadene har blitt inngått mellom kjøpere og selgere, vil
+markedslikevekten oppstå når husholdningene ikke lengre kan øke sin
+nytte ved å flytte. Dette vil si at en slik likevekt tar for seg
+forholdet mellom prisene på boliger og boligkarakteristika, som
+resulterer i hver kjøper sin marginale betalingsvillighet for hvert
+karakteristikum ved boligen.
 
-**Explain shortly how marginal willingness to pay for an environmental
-attribute can be revealed via Rosen's first step:**
+Den marginale betalingsvilligheten for en miljøegenskap kan avsløres
+gjennom å benytte boligpris-fasilitetsfunksjonen. Denne framviser
+boligpriser som en funksjon av målet på en bestemt fasilitet, gjennom å
+holde andre faktorer konstante. Funksjonen vil være stigende, og for å
+avsløre hver husholdnings MWTP for denne bestemte fasiliteten legger man
+til individuelle bud rentekurver til den stigende funksjonen. Hver av
+disse bud rentekurvene vil representere det maksimale den bestemte
+husholdningen er villig til å betale og kjøpene vil dermed inntreffe der
+bud rentekurven tangerer med prisfunksjonen.
 
 Med henhold til loven om en prisfunksjon, vil det være essensielt å
 definere boligmarkedet som et bestemt storbyområde og studere dette over
@@ -84,12 +101,15 @@ både arbeidsmarkedshensyn og heterogene flyttekostnader, som medfører at
 dersom man definerer gjennom flere storbyområder vil dette begrense
 modellens evne til å gjøre om hedoniske priser om til MWTP-mål.
 
-### ii.
-
-**Explain intuitively, by using an example, why it is important to avoid
-omitted variable bias when estimating a hedonic price model:**
-
--   Litt om omitted variable bias i hedonsik modellformulering
+Både teori og empiriske bevis framviser at miljømessige fasiliteter vil
+være romlig korrelerte,som har medført bekymring ovenfor utelatte
+variabler skjevhet (omitted variable bias). Det er to problemer knyttet
+til en slik skjevhet når man estimerer hedoniske prismodeller. Først og
+fremst så vil det være urimelig at når noen estimerer en slik type
+modell at de vil kunne inkludere enhver type fasilitet som har betydning
+ovenfor kjøpere. I tillegg til dette så vil uobserverte fasiliteter stå
+i fare for å være korrelert med fasiliteten man har interesse for, noe
+som vil medføre en skjevhet i estimeringen.
 
 For å illustrere, dersom boligkjøpere med god økonomi og utdanning
 velger å flytte til nabolag med høy luftkvalitet og videre stemmer for å
@@ -104,8 +124,7 @@ i modellen.
 
 ## i.
 
-Definisjonene ser bra ut i selve CSV-filen. 
-Slik som under:
+Definisjonene ser bra ut i selve CSV-filen. Slik som under:
 id,date,price,bedrooms,bathrooms,sqft_living,sqft_lot,floors,waterfront,view,condition,grade,sqft_above,sqft_basement,yr_built,yr_renovated,zipcode,lat,long,sqft_living15,sqft_lot15
 
 ## ii.
@@ -123,6 +142,7 @@ kc_house_data %>% arrange(desc(mdy(kc_house_data$date)))
 ## iv.
 
 dplyr::distinct()
+
 ```{r}
 kc_house_data %>% distinct(sqft_living, .keep_all = TRUE)
 
@@ -157,7 +177,6 @@ kc_house_data_sf <- kc_house_data_sf %>% mutate(
  dist_cbd_km = set_units(dist_cbd, km)
  )
 ```
-
 
 # Oppgave 3:
 
@@ -252,9 +271,7 @@ kc_houses_env_var <- st_join(kc_house_data_sf, kc_tracts10_env_data)
 kc_tracts10_shore_env_var <- st_join(kc_house_data_sf, kc_tracts10_shore_env_data)
 ```
 
-
 # Oppgave 4:
-
 
 ## i.
 
@@ -262,11 +279,9 @@ kc_tracts10_shore_env_var <- st_join(kc_house_data_sf, kc_tracts10_shore_env_dat
 summary(kc_tracts10_env_data)
 ```
 
-
 ```{r}
 summary(kc_tracts10_shore_env_data)
 ```
-
 
 ## ii.
 
@@ -277,10 +292,12 @@ st_write(kc_tracts10_shore, "Data/kc_tracts10_shore.gpkg", append = FALSE)
 ```
 
 ## iii.
+
 ```{r}
 kc_houses_env_var <- arrange(kc_house_data, desc(id))
 kc_houses_env_var_omit <- kc_houses_env_var[-c(3518000180 ),]
 ```
+
 ## iv.
 
 ```{r}
@@ -289,6 +306,7 @@ kc_houses_env_var_omit <- kc_houses_env_var_omit %>% mutate(year_month = substr(
 ```
 
 ## v.
+
 Dette er gjort, og blitt lastet inn på nytt i "Data" mappen
 
 # Oppgave 5:
@@ -308,9 +326,8 @@ husdata <- st_read("Data/kc_houses_env_var_omit.gpkg")
 ```{r, fig.width=3, fig.height=3}
 husdata %>% plot()
 ```
+
 ## iii.
-
-
 
 ## iv.
 
