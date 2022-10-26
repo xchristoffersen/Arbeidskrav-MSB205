@@ -28,95 +28,49 @@ library(rgeoda)
 
 # Oppgave 1 - Artikkelsammendrag:
 
-Dette sammendraget fokuserer på Bishop et al. (2020) sin artikkel som
-tar for seg hedoniske eiendomsverdimodeller som den beste praksisen når
-formålet er å måle husholdningens betalingsvillighet for en endring i en
-miljøfasilitet. Her estimerer man en fleksibel boligprisfunksjon, som er
-hentet fra data om salgspriser og fysiske attributter ved boligen, som
-videre deriveres for å tolke fasilitetenes sine implisitte priser. Disse
-implisitte prisene kan da benyttes til å framskaffe husholdningens
-marginale betalingsvillighet (MWTP). Datamateriale fra boligmarkeder i
-avanserte økonomier sine storbyer er benyttet for å etablere de beste
-praksisene for hedonisk modellformulering. Rosen´s (1974) første og
-andre steg er ansett som de to beste praksisene for den hedoniske
-modellen.
+Dette sammendraget fokuserer på Bishop et al. (2020) sin artikkel som tar for seg hedoniske eiendomsverdimodeller som den beste praksisen når formålet er å måle husholdningens betalingsvillighet for en endring i en miljøfasilitet.
+Her estimerer man en fleksibel boligprisfunksjon, som er hentet fra data om salgspriser og fysiske attributter ved boligen, som videre deriveres for å tolke fasilitetenes sine implisitte priser.
+Disse implisitte prisene kan da benyttes til å framskaffe husholdningens marginale betalingsvillighet (MWTP).
+Datamateriale fra boligmarkeder i avanserte økonomier sine storbyer er benyttet for å etablere de beste praksisene for hedonisk modellformulering.
+Rosen´s (1974) første og andre steg er ansett som de to beste praksisene for den hedoniske modellen.
 
-Det første steget omhandler definisjonen av markedet. Her tar man for
-seg logikken av den hedoniske modellformuleringen om at markedet skal
-være definert slik at det tilfredsstiller prinsippet om loven av en
-prisfunksjon (*law of one price function*). Dette vil si at salg av
-identiske boliger vil ta for seg like priser gjennom det bestemte
-boligmarkedet. Når markedet er definert så vil man kunne gå over til
-Rosen´s andre steg, som er å samle inn data. Den beste praksisen, altså
-gullstandarden for datasamlingen innen hedoniske eiendomsverdistudier er
-å anskaffe et tilfeldig utvalg av prisene til boligtransaksjonene, i
-tillegg til karakteristika av det relevante studieområdet.
+Det første steget omhandler definisjonen av markedet.
+Her tar man for seg logikken av den hedoniske modellformuleringen om at markedet skal være definert slik at det tilfredsstiller prinsippet om loven av en prisfunksjon (*law of one price function*).
+Dette vil si at salg av identiske boliger vil ta for seg like priser gjennom det bestemte boligmarkedet.
+Når markedet er definert så vil man kunne gå over til Rosen´s andre steg, som er å samle inn data.
+Den beste praksisen, altså gullstandarden for datasamlingen innen hedoniske eiendomsverdistudier er å anskaffe et tilfeldig utvalg av prisene til boligtransaksjonene, i tillegg til karakteristika av det relevante studieområdet.
 
-Rosen´s presenterte i 1974 det hedoniske rammeverket som en likevekts
-modell. Den hedoniske modellen i en slik forstand tar for seg
-informasjonen om tilbudet av boliger (dette inkluderer også
-eiendomsutviklere sine planer om fremtidige boligprosjekter) og faktorer
-som påvirker videresalg av allerede eksisterende boliger. Når
-transaksjonskostnadene har blitt inngått mellom kjøpere og selgere, vil
-markedslikevekten oppstå når husholdningene ikke lengre kan øke sin
-nytte ved å flytte. Dette vil si at en slik likevekt tar for seg
-forholdet mellom prisene på boliger og boligkarakteristika, som
-resulterer i hver kjøper sin marginale betalingsvillighet for hvert
-karakteristikum ved boligen.
+Rosen´s presenterte i 1974 det hedoniske rammeverket som en likevekts modell.
+Den hedoniske modellen i en slik forstand tar for seg informasjonen om tilbudet av boliger (dette inkluderer også eiendomsutviklere sine planer om fremtidige boligprosjekter) og faktorer som påvirker videresalg av allerede eksisterende boliger.
+Når transaksjonskostnadene har blitt inngått mellom kjøpere og selgere, vil markedslikevekten oppstå når husholdningene ikke lengre kan øke sin nytte ved å flytte.
+Dette vil si at en slik likevekt tar for seg forholdet mellom prisene på boliger og boligkarakteristika, som resulterer i hver kjøper sin marginale betalingsvillighet for hvert karakteristikum ved boligen.
 
-Den marginale betalingsvilligheten for en miljøegenskap kan avsløres
-gjennom å benytte boligpris-fasilitetsfunksjonen. Denne framviser
-boligpriser som en funksjon av målet på en bestemt fasilitet, gjennom å
-holde andre faktorer konstante. Funksjonen vil være stigende, og for å
-avsløre hver husholdnings MWTP for denne bestemte fasiliteten legger man
-til individuelle bud rentekurver til den stigende funksjonen. Hver av
-disse bud rentekurvene vil representere det maksimale den bestemte
-husholdningen er villig til å betale og kjøpene vil dermed inntreffe der
-bud rentekurven tangerer med prisfunksjonen.
+Den marginale betalingsvilligheten for en miljøegenskap kan avsløres gjennom å benytte boligpris-fasilitetsfunksjonen.
+Denne framviser boligpriser som en funksjon av målet på en bestemt fasilitet, gjennom å holde andre faktorer konstante.
+Funksjonen vil være stigende, og for å avsløre hver husholdnings MWTP for denne bestemte fasiliteten legger man til individuelle bud rentekurver til den stigende funksjonen.
+Hver av disse bud rentekurvene vil representere det maksimale den bestemte husholdningen er villig til å betale og kjøpene vil dermed inntreffe der bud rentekurven tangerer med prisfunksjonen.
 
-Med henhold til loven om en prisfunksjon, vil det være essensielt å
-definere boligmarkedet som et bestemt storbyområde og studere dette over
-en kort tidshorisont. Grunnlaget til dette ligger i flyttekostnader, som
-kan medføre brudd ovenfor denne prisfunksjonen.
+Med henhold til loven om en prisfunksjon, vil det være essensielt å definere boligmarkedet som et bestemt storbyområde og studere dette over en kort tidshorisont.
+Grunnlaget til dette ligger i flyttekostnader, som kan medføre brudd ovenfor denne prisfunksjonen.
 
-Dersom vi ser på en husholdning som velger å flytte innenfor et bestemt
-storbyområde, vil man se at disse type flyttekostnader tenderer til å
-forbli nokså like gjennom dette området. Dette gjelder både de
-finansielle- og psykologiske kostnadene som flytting medfører.
-Finansielle kostnader slikt som eiendomsmegler honorarer og
-lastebilutleie er antatt til å ha lav variasjon innenfor det bestemte
-området. På samme måte vil de psykologiske kostnadene ved flytting ikke
-være like belastende når dette skjer innenfor storbyområdet.
-Eksempelvis, husholdningens mulighet til å opprettholde kontakt til
-familie, venner og nabolag. Dermed kan vi se at loven om en prisfunksjon
-kan opprettholdes gjennom en arbitrasje, ved a en boligkjøper ikke hadde
-valgt å kjøpe en bolig i et storbyområde dersom han kunne kjøpt et
-identisk hus til en lavere pris i det samme området.
+Dersom vi ser på en husholdning som velger å flytte innenfor et bestemt storbyområde, vil man se at disse type flyttekostnader tenderer til å forbli nokså like gjennom dette området.
+Dette gjelder både de finansielle- og psykologiske kostnadene som flytting medfører.
+Finansielle kostnader slikt som eiendomsmegler honorarer og lastebilutleie er antatt til å ha lav variasjon innenfor det bestemte området.
+På samme måte vil de psykologiske kostnadene ved flytting ikke være like belastende når dette skjer innenfor storbyområdet.
+Eksempelvis, husholdningens mulighet til å opprettholde kontakt til familie, venner og nabolag.
+Dermed kan vi se at loven om en prisfunksjon kan opprettholdes gjennom en arbitrasje, ved a en boligkjøper ikke hadde valgt å kjøpe en bolig i et storbyområde dersom han kunne kjøpt et identisk hus til en lavere pris i det samme området.
 
-Man kan også ta for seg utfordringene som kan oppstå dersom man hadde
-valgt å ta for seg å definere markedet med flere byområder. Her vil en
-grunnleggende utfordring være at det fremkommer større flyttekostnader
-mellom ulike byområder. Den hedoniske eiendomsverdimodellen ignorerer
-både arbeidsmarkedshensyn og heterogene flyttekostnader, som medfører at
-dersom man definerer gjennom flere storbyområder vil dette begrense
-modellens evne til å gjøre om hedoniske priser om til MWTP-mål.
+Man kan også ta for seg utfordringene som kan oppstå dersom man hadde valgt å ta for seg å definere markedet med flere byområder.
+Her vil en grunnleggende utfordring være at det fremkommer større flyttekostnader mellom ulike byområder.
+Den hedoniske eiendomsverdimodellen ignorerer både arbeidsmarkedshensyn og heterogene flyttekostnader, som medfører at dersom man definerer gjennom flere storbyområder vil dette begrense modellens evne til å gjøre om hedoniske priser om til MWTP-mål.
 
-Både teori og empiriske bevis framviser at miljømessige fasiliteter vil
-være romlig korrelerte,som har medført bekymring ovenfor utelatte
-variabler skjevhet (omitted variable bias). Det er to problemer knyttet
-til en slik skjevhet når man estimerer hedoniske prismodeller. Først og
-fremst så vil det være urimelig at når noen estimerer en slik type
-modell at de vil kunne inkludere enhver type fasilitet som har betydning
-ovenfor kjøpere. I tillegg til dette så vil uobserverte fasiliteter stå
-i fare for å være korrelert med fasiliteten man har interesse for, noe
-som vil medføre en skjevhet i estimeringen.
+Både teori og empiriske bevis framviser at miljømessige fasiliteter vil være romlig korrelerte,som har medført bekymring ovenfor utelatte variabler skjevhet (omitted variable bias).
+Det er to problemer knyttet til en slik skjevhet når man estimerer hedoniske prismodeller.
+Først og fremst så vil det være urimelig at når noen estimerer en slik type modell at de vil kunne inkludere enhver type fasilitet som har betydning ovenfor kjøpere.
+I tillegg til dette så vil uobserverte fasiliteter stå i fare for å være korrelert med fasiliteten man har interesse for, noe som vil medføre en skjevhet i estimeringen.
 
-For å illustrere, dersom boligkjøpere med god økonomi og utdanning
-velger å flytte til nabolag med høy luftkvalitet og videre stemmer for å
-øke den bestemte offentlige skolefinansieringen vil dette medføre
-konsekvenser. Dette vil bidra til at estimater av MWTP for luftkvalitet
-vil være skjevfordelt, med henhold til at skolekvalitet ikke inkluderes
-i modellen.
+For å illustrere, dersom boligkjøpere med god økonomi og utdanning velger å flytte til nabolag med høy luftkvalitet og videre stemmer for å øke den bestemte offentlige skolefinansieringen vil dette medføre konsekvenser.
+Dette vil bidra til at estimater av MWTP for luftkvalitet vil være skjevfordelt, med henhold til at skolekvalitet ikke inkluderes i modellen.
 
 # Oppgave 2:
 
@@ -124,8 +78,8 @@ i modellen.
 
 ## i.
 
-Definisjonene ser bra ut i selve CSV-filen. Slik som under:
-id,date,price,bedrooms,bathrooms,sqft_living,sqft_lot,floors,waterfront,view,condition,grade,sqft_above,sqft_basement,yr_built,yr_renovated,zipcode,lat,long,sqft_living15,sqft_lot15
+Definisjonene ser bra ut i selve CSV-filen.
+Slik som under: id,date,price,bedrooms,bathrooms,sqft_living,sqft_lot,floors,waterfront,view,condition,grade,sqft_above,sqft_basement,yr_built,yr_renovated,zipcode,lat,long,sqft_living15,sqft_lot15
 
 ## ii.
 
@@ -172,9 +126,13 @@ cbd <- st_sfc(st_point(c(-122.333056, 47.609722)), crs = 4326) %>% st_transform(
 ## viii.
 
 ```{r}
-kc_house_data_sf <- kc_house_data_sf %>% mutate(
- dist_cbd = st_distance(cbd, ., by_element = TRUE),
- dist_cbd_km = set_units(dist_cbd, km)
+kc_house_data_sf <- kc_house_data_sf %>% 
+  # Begge må være transformet til 2926 for at vi skal kunne 
+  # beregne distanse
+  st_transform(2926) %>% 
+  mutate(
+    dist_cbd = st_distance(cbd, ., by_element = TRUE),
+    dist_cbd_km = set_units(dist_cbd, km)
  )
 ```
 
@@ -218,14 +176,14 @@ kc_wadoh_map <- kc_wadoh_map %>%
 
 ```{r}
 kc_wadoh_map <- kc_wadoh_map %>% st_transform(2926)
-
-
 ```
 
 ## iv.
 
 ```{r}
 acs_b19101_familyincome <- read.dbf("data/acs_b19101_familyincome.dbf")
+# Generelt frarådes bruk av attach, bedre å bruke et korte objektnavn
+# acs_b19101_fi og så $ for å hente variabelen
 attach(acs_b19101_familyincome)
 ```
 
@@ -244,6 +202,10 @@ kc_tracts10_shore <- here("census_SHP/censusSHP/tracts10_shore.shp") %>%
   st_read() %>% 
   st_transform(2926)
 ```
+
+::: callout-note
+## Som dere ser er det her en absolutt sti til en fil jeg ikke har på min maskin.
+:::
 
 ## vii.
 
