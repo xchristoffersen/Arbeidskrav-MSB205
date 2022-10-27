@@ -203,6 +203,12 @@ kc_tracts10_shore <- here("census_SHP/censusSHP/tracts10_shore.shp") %>%
   st_transform(2926)
 ```
 
+```{r}
+tracts10 <- read_sf("data/tracts10.shp")
+tracts10_shore <- read_sf("data/tracts10_shore.shp")
+```
+
+
 ::: callout-note
 ## Som dere ser er det her en absolutt sti til en fil jeg ikke har på min maskin.
 :::
